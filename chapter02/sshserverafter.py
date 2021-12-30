@@ -4,7 +4,7 @@ import threading
 import sys
 # using the server host key from the paramiko demo files
 # host_key = paramiko.RSAKey.(filename='id_rsa')
-host_key = paramiko.RSAKey(filename='/home/zulei/.ssh/id_rsa')
+host_key = paramiko.RSAKey(filename='/home/user/.ssh/id_rsa')
 
 class Server(paramiko.ServerInterface):
     def __init__(self):
