@@ -2,6 +2,7 @@ import socket
 import paramiko
 import threading
 import sys
+host_key = paramiko.RSAKey(filename='/home/user/.ssh/id_rsa')
 class Server (paramiko.ServerInterface):
    def _init_(self):
       self.event = threading.Event()
@@ -36,7 +37,7 @@ class Server (paramiko.ServerInterface):
             server = Server()
             try:
                bhSession.start_server(server=server)
-            except paramiko.SSHException, x:
+            except paramiko.SSHException as x:
                print ('[-] SSH Negotiation Failed')
 
                chan = bhSession.accept(20)
